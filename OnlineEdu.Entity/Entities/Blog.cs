@@ -17,6 +17,6 @@ namespace OnlineEdu.Entity.Entities
 
         public int BlogCategoryId { get; set; }
 
-        public BlogCategoy BlogCategoy { get; set; }
+        public BlogCategory BlogCategory { get; set; }
     }
 }

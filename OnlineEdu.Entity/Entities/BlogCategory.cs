@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnlineEdu.Entity.Entities
 {
-    public class BlogCategoy
+    public class BlogCategory
     {
         public int BlogCategoryId { get; set; }
         public string Name { get; set; }

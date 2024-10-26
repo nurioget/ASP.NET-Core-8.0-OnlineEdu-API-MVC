@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace OnlineEdu.Entity.Entities
 {
-    public class SoicalMedia
+    public class SocialMedia
     {
-        public int SoicalMediaId { get; set; }
+        public int SocialMediaId { get; set; }
         public string Icon { get; set; }
         public string Url { get; set; }
         public string Title { get; set; }
