@@ -12,7 +12,7 @@ using OnlineEdu.DataAccess.Context;
 namespace OnlineEdu.DataAccess.Migrations
 {
     [DbContext(typeof(OnlineEduContext))]
-    [Migration("20241026092257_mig_1")]
+    [Migration("20241026114536_mig_1")]
     partial class mig_1
     {
         /// <inheritdoc />
