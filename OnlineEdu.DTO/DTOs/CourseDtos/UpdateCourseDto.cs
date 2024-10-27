@@ -4,17 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineEdu.Entity.Entities
+namespace OnlineEdu.DTO.DTOs.CourseDtos
 {
-    public class Course
+    public class UpdateCourseDto
     {
         public int CourseId { get; set; }
         public string CourseName { get; set; }
         public string ImageUrl { get; set; }
         public int CourseCategoryId { get; set; }
-        public CourseCategory Category { get; set; }
         public decimal Price { get; set; }
         public bool IsShown { get; set; }
-
     }
 }
