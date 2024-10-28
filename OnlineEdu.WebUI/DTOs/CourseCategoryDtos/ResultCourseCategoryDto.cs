@@ -1,4 +1,4 @@
-﻿using OnlineEdu.DTO.DTOs.CourseDtos;
+﻿using OnlineEdu.WebUI.DTOs.CourseDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
