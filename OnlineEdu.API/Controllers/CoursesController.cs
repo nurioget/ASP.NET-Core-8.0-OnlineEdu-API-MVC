@@ -17,18 +17,21 @@ namespace OnlineEdu.API.Controllers
             var values = _courseService.TGetList();
             return Ok(values);
         }
+
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             var value = _courseService.TGetById(id);
             return Ok(value);
         }
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             _courseService.TDelete(id);
             return Ok("Kurs Alanı Silindi");
         }
+
         [HttpPost]
         public IActionResult Create(CreateCourseDto createCourseDto)
         {
@@ -36,6 +39,7 @@ namespace OnlineEdu.API.Controllers
             _courseService.TCreate(newValue);
             return Ok("Yeni Kurs Alanı Oluşturuldu");
         }
+
         [HttpPut]
         public IActionResult Update(UpdateCourseDto updateCourseDto)
         {
@@ -56,6 +60,13 @@ namespace OnlineEdu.API.Controllers
         {
             _courseService.TDontShowOnHome(id);
             return Ok("Ana Sayfada Gösterilmiyor");
+        }
+
+        [HttpGet("GetActiveCourses")]
+        public IActionResult GetActiveCourses()
+        {
+            var values = _courseService.TGetFilteredList(x => x.IsShown == true);
+            return Ok(values);
         }
     }
 }
