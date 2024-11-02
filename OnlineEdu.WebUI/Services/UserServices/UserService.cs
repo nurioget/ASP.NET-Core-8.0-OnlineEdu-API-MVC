@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using OnlineEdu.Entity.Entities;
 using OnlineEdu.WebUI.DTOs.UserDtos;
 
@@ -6,7 +7,7 @@ namespace OnlineEdu.WebUI.Services.UserServices
 {
     public class UserService(UserManager<AppUser> _userManager, SignInManager<AppUser> _signInManager, RoleManager<AppRole> _roleManager) : IUserService
     {
-        public Task<bool> AssignRoleAsync(AssignRoleDto assignRoleDto)
+        public Task<bool> AssignRoleAsync(List<AssignRoleDto> assignRoleDto)
         {
             throw new NotImplementedException();
         }
@@ -31,6 +32,16 @@ namespace OnlineEdu.WebUI.Services.UserServices
             }
 
             return await _userManager.CreateAsync(user, userRegisterDto.Password);
+        }
+
+        public async Task<List<AppUser>> GetAllUsersAsync()
+        {
+            return await _userManager.Users.ToListAsync();
+        }
+
+        public async Task<AppUser> GetUserByIdAsync(int id)
+        {
+            return await _userManager.Users.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<string> LoginAsync(UserLoginDto userLoginDto)
