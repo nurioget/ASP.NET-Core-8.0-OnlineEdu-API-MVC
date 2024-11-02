@@ -31,7 +31,15 @@ namespace OnlineEdu.WebUI.Services.UserServices
                 return new IdentityResult();
             }
 
-            return await _userManager.CreateAsync(user, userRegisterDto.Password);
+            var result = await _userManager.CreateAsync(user, userRegisterDto.Password);
+
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, "Student");
+                return result;
+            }
+
+            return result;
         }
 
         public async Task<List<AppUser>> GetAllUsersAsync()
