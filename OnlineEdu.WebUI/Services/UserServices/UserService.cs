@@ -2,7 +2,7 @@
 using OnlineEdu.Entity.Entities;
 using OnlineEdu.WebUI.DTOs.UserDtos;
 
-namespace OnlineEdu.WebUI.Services
+namespace OnlineEdu.WebUI.Services.UserServices
 {
     public class UserService(UserManager<AppUser> _userManager, SignInManager<AppUser> _signInManager, RoleManager<AppRole> _roleManager) : IUserService
     {

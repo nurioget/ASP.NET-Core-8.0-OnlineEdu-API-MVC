@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.WebUI.DTOs.UserDtos;
-using OnlineEdu.WebUI.Services;
+using OnlineEdu.WebUI.Services.UserServices;
 
 namespace OnlineEdu.WebUI.Controllers
 {

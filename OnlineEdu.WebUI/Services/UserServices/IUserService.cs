@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using OnlineEdu.WebUI.DTOs.UserDtos;
 
-namespace OnlineEdu.WebUI.Services
+namespace OnlineEdu.WebUI.Services.UserServices
 {
     public interface IUserService
     {
