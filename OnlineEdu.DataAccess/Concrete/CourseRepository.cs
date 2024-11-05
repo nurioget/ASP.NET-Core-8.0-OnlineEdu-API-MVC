@@ -22,6 +22,13 @@ namespace OnlineEdu.DataAccess.Concrete
             value.IsShown = false;
             _context.SaveChanges();
         }
+
+        public List<Course> GetAllCoursesWithCategories()
+        {
+
+            return _context.Courses.Include(x => x.CourseCategory).ToList();
+        }
+
         public void ShowOnHome(int id)
         {
             var value = _context.Courses.Find(id);
