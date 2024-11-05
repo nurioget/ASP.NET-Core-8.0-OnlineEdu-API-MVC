@@ -31,5 +31,10 @@ namespace OnlineEdu.Business.Concrete
         {
             return _courseRepository.GetAllCoursesWithCategories();
         }
+
+        public List<Course> TGetCoursesByTeacherId(int id)
+        {
+            return _courseRepository.TGetCoursesByTeacherId(id);
+        }
     }
 }
