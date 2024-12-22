@@ -12,8 +12,8 @@ namespace OnlineEdu.DTO.DTOs.CourseRegisterDtos
     {
 
         public int AppUserId { get; set; }
-        public AppUser AppUser { get; set; }
+
         public int CourseId { get; set; }
-        public ResultCourseDto Course { get; set; }
+
     }
 }
