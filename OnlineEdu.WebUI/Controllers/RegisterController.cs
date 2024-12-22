@@ -24,7 +24,7 @@ namespace OnlineEdu.WebUI.Controllers
                 return View();
             }
 
-            return RedirectToAction("SigIn", "Login");
+            return RedirectToAction("SignIn", "Login");
         }
     }
 }
