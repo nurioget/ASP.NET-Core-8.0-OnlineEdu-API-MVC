@@ -105,5 +105,12 @@ namespace OnlineEdu.WebUI.Services.UserServices
             return teachers.Count();
         }
 
+        public async Task<List<ResultUserDto>> GetAllTeachers()
+        {
+            var users = await _userManager.Users.Include(x => x.TeacherSocials).ToListAsync();
+            var teachers = users.Where(user => _userManager.IsInRoleAsync(user, "Teacher").Result).ToList();
+            return _mapper.Map<List<ResultUserDto>>(teachers);
+        }
+
     }
 }
